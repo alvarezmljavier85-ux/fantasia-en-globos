@@ -1,0 +1,176 @@
+/* =============================================
+   FANTASÍA EN GLOBOS — Estilos compartidos
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --rosa: #f4b8c8;
+  --rosa-claro: #fce8ee;
+  --rosa-palido: #fdf0f4;
+  --rosa-profundo: #e8799a;
+  --dorado: #c9a84c;
+  --dorado-claro: #f5e6c0;
+  --blanco: #ffffff;
+  --gris-texto: #3a2a2f;
+  --gris-suave: #7a6570;
+  --fondo: #fdf7f9;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--fondo);
+  color: var(--gris-texto);
+  overflow-x: hidden;
+}
+
+/* ── NAVBAR ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 48px;
+  background: rgba(253,247,249,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(244,184,200,0.3);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--gris-texto);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(--rosa-profundo); font-style: italic; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 14px; font-weight: 400; color: var(--gris-suave);
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--rosa-profundo); }
+.nav-cta {
+  background: var(--rosa-profundo); color: white;
+  padding: 10px 24px; border-radius: 100px;
+  font-size: 14px; font-weight: 500; text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-cta:hover { background: #d4607e; transform: translateY(-1px); }
+
+/* ── BOTONES ── */
+.btn-primary {
+  background: var(--rosa-profundo); color: white;
+  padding: 15px 32px; border-radius: 100px;
+  font-size: 15px; font-weight: 500; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 10px;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: #d4607e; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,121,154,0.3); }
+.btn-secondary {
+  background: transparent; color: var(--gris-texto);
+  padding: 15px 32px; border-radius: 100px;
+  font-size: 15px; font-weight: 500; text-decoration: none;
+  border: 1.5px solid rgba(58,42,47,0.2);
+  display: inline-flex; align-items: center; gap: 10px;
+  transition: all 0.2s;
+}
+.btn-secondary:hover { border-color: var(--rosa-profundo); color: var(--rosa-profundo); }
+.btn-whatsapp {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #25D366; color: white;
+  padding: 16px 36px; border-radius: 100px;
+  font-size: 16px; font-weight: 500; text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 8px 24px rgba(37,211,102,0.3);
+}
+.btn-whatsapp:hover { background: #20b858; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(37,211,102,0.4); }
+
+/* ── SECTION HEADER ── */
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-tag {
+  display: inline-block;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--rosa-profundo);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  color: var(--gris-texto); line-height: 1.2;
+}
+.section-title em { font-style: italic; color: var(--rosa-profundo); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--gris-texto);
+  color: rgba(255,255,255,0.8);
+  padding: 56px 48px 32px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px; margin-bottom: 40px;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px; color: white;
+  margin-bottom: 12px;
+}
+.footer-logo span { color: var(--rosa); font-style: italic; }
+.footer-desc { font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.6); max-width: 280px; }
+.footer-social { display: flex; gap: 12px; margin-top: 20px; }
+.social-btn {
+  width: 36px; height: 36px; border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  color: white; text-decoration: none; font-size: 16px;
+  transition: background 0.2s;
+}
+.social-btn:hover { background: var(--rosa-profundo); }
+.footer-col h4 { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 10px; }
+.footer-col a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--rosa); }
+.footer-bottom {
+  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: rgba(255,255,255,0.4);
+}
+
+/* ── WHATSAPP FLOAT ── */
+.whatsapp-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 999;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px; text-decoration: none; color: white;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: pulse 2.5s infinite;
+}
+.whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 8px 28px rgba(37,211,102,0.5); }
+
+/* ── ANIMACIONES ── */
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+  50% { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.7s ease forwards; }
+.delay-1 { animation-delay: 0.1s; opacity: 0; }
+.delay-2 { animation-delay: 0.25s; opacity: 0; }
+.delay-3 { animation-delay: 0.4s; opacity: 0; }
+.delay-4 { animation-delay: 0.55s; opacity: 0; }
+
+/* ── RESPONSIVE COMPARTIDO ── */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}

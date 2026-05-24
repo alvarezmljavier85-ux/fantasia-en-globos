@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Fantasía en Globos | Puerto Ayacucho</title>
+<meta name="description" content="Contáctanos por WhatsApp, Instagram o visítanos en Barrio Unión, Puerto Ayacucho, Amazonas. Decoraciones en globos para todos tus eventos.">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ── PAGE HERO ── */
+  .page-hero {
+    padding: 140px 48px 60px;
+    background: linear-gradient(135deg, var(--rosa-palido) 0%, white 60%);
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .page-hero::before {
+    content: '💬';
+    position: absolute; font-size: 280px; opacity: 0.04;
+    top: -40px; right: -20px; transform: rotate(10deg);
+    pointer-events: none;
+  }
+  .page-hero .section-tag { margin-bottom: 14px; }
+  .page-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.15; color: var(--gris-texto);
+    margin-bottom: 16px;
+  }
+  .page-hero h1 em { font-style: italic; color: var(--rosa-profundo); }
+  .page-hero p {
+    font-size: 17px; color: var(--gris-suave);
+    max-width: 520px; margin: 0 auto 36px; font-weight: 300; line-height: 1.7;
+  }
+
+  /* ── CONTACT MAIN ── */
+  .contact-main {
+    padding: 72px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ── INFO COLUMN ── */
+  .contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 3vw, 36px);
+    color: var(--gris-texto); margin-bottom: 10px; line-height: 1.2;
+  }
+  .contact-info h2 em { font-style: italic; color: var(--rosa-profundo); }
+  .contact-info > p {
+    font-size: 15px; color: var(--gris-suave); line-height: 1.7; margin-bottom: 32px; font-weight: 300;
+  }
+
+  .contact-cards { display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
+  .contact-card {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 18px 20px; border-radius: 16px;
+    background: white;
+    border: 1.5px solid rgba(244,184,200,0.4);
+    text-decoration: none; color: inherit;
+    transition: all 0.25s;
+  }
+  .contact-card:hover {
+    border-color: var(--rosa-profundo);
+    box-shadow: 0 8px 24px rgba(232,121,154,0.12);
+    transform: translateX(4px);
+  }
+  .contact-card-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; flex-shrink: 0;
+  }
+  .icon-wa { background: #dcf8e7; }
+  .icon-ig { background: #fce8ee; }
+  .icon-fb { background: #e8eef8; }
+  .icon-map { background: var(--dorado-claro); }
+  .contact-card-body {}
+  .contact-card-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--gris-suave); margin-bottom: 3px;
+  }
+  .contact-card-value {
+    font-size: 15px; font-weight: 500; color: var(--gris-texto); line-height: 1.3;
+  }
+  .contact-card-sub { font-size: 12px; color: var(--gris-suave); margin-top: 2px; }
+
+  /* ── HOURS ── */
+  .hours-block {
+    background: var(--fondo); border-radius: 16px;
+    padding: 20px 22px;
+    border: 1.5px solid rgba(244,184,200,0.3);
+    margin-bottom: 24px;
+  }
+  .hours-block h3 {
+    font-size: 14px; font-weight: 500; color: var(--gris-texto);
+    margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+  }
+  .hours-block h3 span { font-size: 18px; }
+  .hours-table { width: 100%; border-collapse: collapse; }
+  .hours-table tr { border-bottom: 1px solid rgba(244,184,200,0.25); }
+  .hours-table tr:last-child { border-bottom: none; }
+  .hours-table td { padding: 7px 0; font-size: 13px; }
+  .hours-table td:first-child { color: var(--gris-suave); }
+  .hours-table td:last-child { text-align: right; font-weight: 500; color: var(--gris-texto); }
+  .hours-note {
+    font-size: 12px; color: var(--gris-suave); margin-top: 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  /* ── SOCIAL LINKS ── */
+  .social-links { display: flex; gap: 12px; }
+  .social-link {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 100px;
+    border: 1.5px solid rgba(244,184,200,0.5);
+    background: white; text-decoration: none;
+    font-size: 13px; font-weight: 500; color: var(--gris-texto);
+    transition: all 0.2s;
+  }
+  .social-link:hover { border-color: var(--rosa-profundo); color: var(--rosa-profundo); }
+
+  /* ── FORM COLUMN ── */
+  .contact-form-wrap {}
+  .contact-form-wrap h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.5vw, 32px);
+    color: var(--gris-texto); margin-bottom: 10px; line-height: 1.2;
+  }
+  .contact-form-wrap h2 em { font-style: italic; color: var(--rosa-profundo); }
+  .contact-form-wrap > p {
+    font-size: 14px; color: var(--gris-suave); margin-bottom: 28px; line-height: 1.6;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label {
+    font-size: 13px; font-weight: 500; color: var(--gris-texto);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 13px 16px;
+    border: 1.5px solid rgba(244,184,200,0.5);
+    border-radius: 12px;
+    font-size: 14px; font-family: 'DM Sans', sans-serif;
+    color: var(--gris-texto); background: white;
+    outline: none; transition: border-color 0.2s;
+    appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--rosa-profundo);
+    box-shadow: 0 0 0 3px rgba(232,121,154,0.1);
+  }
+  .form-group textarea { resize: vertical; min-height: 110px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-submit {
+    background: var(--rosa-profundo); color: white;
+    padding: 15px 32px; border-radius: 100px;
+    font-size: 15px; font-weight: 500; border: none;
+    cursor: pointer; font-family: 'DM Sans', sans-serif;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    transition: all 0.2s; width: 100%;
+  }
+  .form-submit:hover { background: #d4607e; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,121,154,0.3); }
+  .form-note {
+    font-size: 12px; color: var(--gris-suave); text-align: center; margin-top: 4px; line-height: 1.5;
+  }
+
+  /* ── MAP ── */
+  .map-section {
+    padding: 0 48px 72px;
+  }
+  .map-container {
+    border-radius: 24px; overflow: hidden;
+    border: 1.5px solid rgba(244,184,200,0.4);
+    box-shadow: 0 8px 32px rgba(232,121,154,0.1);
+  }
+  .map-container iframe {
+    display: block; width: 100%; height: 380px; border: none;
+  }
+  .map-label {
+    background: white; padding: 16px 24px;
+    display: flex; align-items: center; gap: 12px;
+    border-top: 1px solid rgba(244,184,200,0.3);
+  }
+  .map-label-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--dorado-claro);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .map-label-text { font-size: 13px; }
+  .map-label-text strong { display: block; color: var(--gris-texto); font-size: 14px; }
+  .map-label-text span { color: var(--gris-suave); }
+  .map-label-link {
+    margin-left: auto;
+    padding: 8px 16px; border-radius: 100px;
+    background: var(--rosa-profundo); color: white;
+    font-size: 12px; font-weight: 500; text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .map-label-link:hover { background: #d4607e; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .page-hero { padding: 120px 24px 50px; }
+    .contact-main { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px; }
+    .map-section { padding: 0 24px 60px; }
+    .social-links { flex-wrap: wrap; }
+  }
+  @media (max-width: 520px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/584127183087" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">💬</a>
+
+<!-- NAVBAR -->
+<nav>
+  <a href="index.html" class="nav-logo">Fantasía <span>en Globos</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#categorias">Servicios</a></li>
+    <li><a href="catalogo.html">Catálogo</a></li>
+    <li><a href="index.html#arreglos">Arreglos</a></li>
+    <li><a href="contacto.html" class="active">Contacto</a></li>
+  </ul>
+  <a href="https://wa.me/584127183087" class="nav-cta" target="_blank">💬 Cotizar ahora</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="section-tag">Estamos aquí para ti</div>
+  <h1>Hablemos de tu <em>evento</em></h1>
+  <p>Contáctanos por WhatsApp, redes sociales o visítanos en nuestro local en Puerto Ayacucho. Respondemos rápido.</p>
+  <a href="https://wa.me/584127183087?text=Hola%21%20Quiero%20cotizar%20una%20decoraci%C3%B3n.%20%C2%BFMe%20pueden%20asesorar%3F" class="btn-whatsapp" target="_blank">💬 Escribir por WhatsApp ahora</a>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="contact-main">
+
+  <!-- INFO -->
+  <div class="contact-info">
+    <h2>Encuentra<em>nos</em></h2>
+    <p>Estamos en Puerto Ayacucho atendiendo todos los días. La forma más rápida de contactarnos es por WhatsApp.</p>
+
+    <div class="contact-cards">
+
+      <a href="https://wa.me/584127183087?text=Hola%21%20Quiero%20cotizar%20una%20decoraci%C3%B3n." class="contact-card" target="_blank">
+        <div class="contact-card-icon icon-wa">💬</div>
+        <div class="contact-card-body">
+          <div class="contact-card-label">WhatsApp (más rápido)</div>
+          <div class="contact-card-value">0412-7183087</div>
+          <div class="contact-card-sub">Respondemos en menos de 1 hora</div>
+        </div>
+      </a>
+
+      <a href="https://www.instagram.com/fantasiasenglobos01" class="contact-card" target="_blank">
+        <div class="contact-card-icon icon-ig">📸</div>
+        <div class="contact-card-body">
+          <div class="contact-card-label">Instagram</div>
+          <div class="contact-card-value">@fantasiasenglobos01</div>
+          <div class="contact-card-sub">Ver todos nuestros trabajos</div>
+        </div>
+      </a>
+
+      <a href="https://www.facebook.com/fantasiaen.globo.5" class="contact-card" target="_blank">
+        <div class="contact-card-icon icon-fb">📘</div>
+        <div class="contact-card-body">
+          <div class="contact-card-label">Facebook</div>
+          <div class="contact-card-value">fantasiaen.globo.5</div>
+          <div class="contact-card-sub">Síguenos para novedades</div>
+        </div>
+      </a>
+
+      <div class="contact-card" style="cursor:default;">
+        <div class="contact-card-icon icon-map">📍</div>
+        <div class="contact-card-body">
+          <div class="contact-card-label">Dirección</div>
+          <div class="contact-card-value">Calle Principal, Barrio Unión</div>
+          <div class="contact-card-sub">Detrás del C.C. El Mostruo · Puerto Ayacucho 7101 · Amazonas</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hours-block">
+      <h3><span>🕐</span> Horario de atención</h3>
+      <table class="hours-table">
+        <tr>
+          <td>Lunes – Viernes</td>
+          <td>8:00 am – 7:00 pm</td>
+        </tr>
+        <tr>
+          <td>Sábados</td>
+          <td>8:00 am – 5:00 pm</td>
+        </tr>
+        <tr>
+          <td>Domingos</td>
+          <td>9:00 am – 2:00 pm</td>
+        </tr>
+      </table>
+      <div class="hours-note">
+        💡 Consultas por WhatsApp disponibles todos los días
+      </div>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/fantasiasenglobos01" class="social-link" target="_blank">📸 Instagram</a>
+      <a href="https://www.facebook.com/fantasiaen.globo.5" class="social-link" target="_blank">📘 Facebook</a>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <div class="contact-form-wrap">
+    <h2>Cuéntanos tu <em>evento</em></h2>
+    <p>Completa el formulario y te contactaremos por WhatsApp con una propuesta personalizada.</p>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Tu nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="María González" required>
+        </div>
+        <div class="form-group">
+          <label for="telefono">WhatsApp</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="0412-0000000">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="evento">Tipo de evento</label>
+        <select id="evento" name="evento" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="Cumpleaños infantil">🎈 Cumpleaños infantil</option>
+          <option value="Cumpleaños adulto">🎂 Cumpleaños adulto</option>
+          <option value="15 años">💃 15 años</option>
+          <option value="Boda o aniversario">💍 Boda o aniversario</option>
+          <option value="Evento corporativo">🏢 Evento corporativo</option>
+          <option value="Apertura de negocio">🎊 Apertura de negocio</option>
+          <option value="Baby Shower">👶 Baby Shower</option>
+          <option value="Arreglo o regalo">🎁 Arreglo o regalo especial</option>
+          <option value="Otro">✨ Otro evento</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="fecha">Fecha aproximada del evento</label>
+        <input type="date" id="fecha" name="fecha">
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje">Cuéntanos más (colores, temática, lugar…)</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Ej: Quiero un arco de globos en rosado y dorado para un cumpleaños de 5 años con tema de princesas..."></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">
+        💬 Enviar por WhatsApp
+      </button>
+      <div class="form-note">
+        Al enviar, se abrirá WhatsApp con tu mensaje pre-cargado.<br>No guardamos tus datos en ningún servidor.
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<!-- MAPA -->
+<div class="map-section">
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps?q=Barrio+Union,+Puerto+Ayacucho,+Amazonas,+Venezuela&output=embed"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Ubicación Fantasía en Globos - Barrio Unión, Puerto Ayacucho">
+    </iframe>
+    <div class="map-label">
+      <div class="map-label-icon">📍</div>
+      <div class="map-label-text">
+        <strong>Fantasía en Globos</strong>
+        <span>Barrio Unión, detrás del C.C. El Mostruo · Puerto Ayacucho, Amazonas</span>
+      </div>
+      <a href="https://maps.google.com/?q=Barrio+Union,+Puerto+Ayacucho,+Amazonas,+Venezuela" class="map-label-link" target="_blank">Abrir en Maps</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Fantasía <span>en Globos</span></div>
+      <div class="footer-desc">Decoraciones en globos para todos tus eventos especiales en Puerto Ayacucho, Estado Amazonas, Venezuela.</div>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/fantasiasenglobos01" class="social-btn" target="_blank" title="Instagram">📸</a>
+        <a href="https://www.facebook.com/fantasiaen.globo.5" class="social-btn" target="_blank" title="Facebook">📘</a>
+        <a href="https://wa.me/584127183087" class="social-btn" target="_blank" title="WhatsApp">💬</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Páginas</h4>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://wa.me/584127183087">📞 0412-7183087</a></li>
+        <li><a href="https://www.instagram.com/fantasiasenglobos01" target="_blank">📸 @fantasiasenglobos01</a></li>
+        <li><a href="#">📍 Barrio Unión, Puerto Ayacucho</a></li>
+        <li><a href="#">🗺️ Estado Amazonas, Venezuela</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Fantasía en Globos. Todos los derechos reservados.</span>
+    <span>Hecho con 🎈 en Puerto Ayacucho</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+    const evento = document.getElementById('evento').value;
+    const fecha = document.getElementById('fecha').value;
+    const mensaje = document.getElementById('mensaje').value.trim();
+
+    let text = `Hola! Soy ${nombre || 'un cliente interesado'}`;
+    if (evento) text += ` y quiero cotizar decoraciones para: *${evento}*`;
+    if (fecha) {
+      const d = new Date(fecha + 'T12:00:00');
+      text += `\n📅 Fecha del evento: ${d.toLocaleDateString('es-VE', { weekday:'long', year:'numeric', month:'long', day:'numeric' })}`;
+    }
+    if (telefono) text += `\n📞 Mi WhatsApp: ${telefono}`;
+    if (mensaje) text += `\n\n💬 Detalles: ${mensaje}`;
+    text += '\n\n¿Pueden asesorarme?';
+
+    window.open(`https://wa.me/584127183087?text=${encodeURIComponent(text)}`, '_blank');
+  });
+</script>
+
+</body>
+</html>
