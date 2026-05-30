@@ -48,6 +48,15 @@
     background: var(--rosa-profundo); color: white;
     border-color: var(--rosa-profundo);
   }
+  .filter-personalizado {
+    padding: 10px 22px; border-radius: 100px;
+    border: 1.5px solid #e8799a;
+    background: #e8799a; color: white;
+    font-size: 14px; font-weight: 400; cursor: pointer;
+    transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+    text-decoration: none; display: inline-flex; align-items: center;
+  }
+  .filter-personalizado:hover { background: #d4607e; border-color: #d4607e; }
 
   /* ── CATALOG GRID ── */
   .catalog-grid {
@@ -226,10 +235,9 @@
     <button class="filter-btn active" data-filter="all">🎀 Todos</button>
     <button class="filter-btn" data-filter="cumpleanos">🎈 Cumpleaños</button>
     <button class="filter-btn" data-filter="eventos">✨ Eventos</button>
-    <button class="filter-btn" data-filter="corporativo">🏢 Corporativo</button>
-    <button class="filter-btn" data-filter="salones">🥂 Salones</button>
     <button class="filter-btn" data-filter="romantico">💕 Romántico</button>
     <button class="filter-btn" data-filter="arreglos">🎁 Arreglos</button>
+    <a href="configurador.html" class="filter-personalizado">🎨 Personalizado</a>
   </div>
 
   <!-- Grid -->
