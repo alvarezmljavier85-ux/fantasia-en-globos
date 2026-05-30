@@ -96,6 +96,8 @@
     background: var(--rosa-profundo);
     color: white;
   }
+  .step-dot.done { cursor: pointer; }
+  .step-dot.done:hover .dot { opacity: 0.75; transform: scale(1.08); }
   .step-label {
     font-size: 10px; color: var(--gris-suave);
     text-align: center; letter-spacing: 0.04em;
@@ -360,19 +362,19 @@
 
 <!-- PROGRESS -->
 <div class="progress-bar" id="progressBar">
-  <div class="step-dot active" data-step="1">
+  <div class="step-dot active" data-step="1" onclick="handleDotClick(1)">
     <div class="dot">1</div>
     <span class="step-label">Elemento</span>
   </div>
-  <div class="step-dot" data-step="2">
+  <div class="step-dot" data-step="2" onclick="handleDotClick(2)">
     <div class="dot">2</div>
     <span class="step-label">Ocasión</span>
   </div>
-  <div class="step-dot" data-step="3">
+  <div class="step-dot" data-step="3" onclick="handleDotClick(3)">
     <div class="dot">3</div>
     <span class="step-label">Colores</span>
   </div>
-  <div class="step-dot" data-step="4">
+  <div class="step-dot" data-step="4" onclick="handleDotClick(4)">
     <div class="dot">✓</div>
     <span class="step-label">Resumen</span>
   </div>
@@ -447,10 +449,10 @@
         oninput="updateNombre()">
     </div>
 
-    <button class="btn-next" id="btn2" onclick="goToStep(3)" disabled style="margin-top:20px;">
+    <button class="btn-back" onclick="goToStep(1)" style="margin-top:20px;">← Cambiar elemento</button>
+    <button class="btn-next" id="btn2" onclick="goToStep(3)" disabled>
       Continuar → Colores
     </button>
-    <button class="btn-back" onclick="goToStep(1)">← Cambiar elemento</button>
   </div>
 
   <!-- PASO 3: COLORES -->
@@ -628,6 +630,11 @@
     state.colorLabel = card.dataset.label;
     state.colorSwatches = JSON.parse(card.dataset.colors);
     document.getElementById('btn3').disabled = false;
+  }
+
+  function handleDotClick(n) {
+    const dot = document.querySelector('.step-dot[data-step="' + n + '"]');
+    if (dot && dot.classList.contains('done')) goToStep(n);
   }
 
   function goToStep(n) {
