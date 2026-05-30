@@ -167,6 +167,51 @@
   .cat-placeholder span { font-size: 28px; }
   .cat-placeholder p { font-weight: 500; }
   .cat-placeholder small { font-size: 12px; color: var(--gris-suave); }
+  .cat-card--featured {
+    grid-column: span 3;
+    border-radius: 20px; overflow: hidden;
+    background: #e8799a;
+    text-decoration: none;
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 36px 40px;
+    gap: 24px;
+    transition: filter 0.3s, transform 0.3s;
+    position: relative;
+  }
+  .cat-card--featured::after {
+    content: '🎨';
+    position: absolute; right: 160px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 90px; opacity: 0.12; pointer-events: none;
+  }
+  .cat-card--featured:hover { filter: brightness(1.06); transform: translateY(-2px); }
+  .cat-card--featured .cat-feat-icon { font-size: 48px; flex-shrink: 0; }
+  .cat-card--featured .cat-feat-body { flex: 1; }
+  .cat-card--featured .cat-feat-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px; font-weight: 700;
+    color: white; line-height: 1.2; margin-bottom: 6px;
+  }
+  .cat-card--featured .cat-feat-desc {
+    font-size: 15px; color: rgba(255,255,255,0.88);
+    font-weight: 300; line-height: 1.5;
+  }
+  .cat-card--featured .cat-feat-btn {
+    background: white; color: #e8799a;
+    padding: 12px 28px; border-radius: 100px;
+    font-size: 14px; font-weight: 600;
+    white-space: nowrap; flex-shrink: 0;
+    transition: box-shadow 0.2s;
+  }
+  .cat-card--featured:hover .cat-feat-btn { box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+  @media (max-width: 900px) {
+    .cat-card--featured { grid-column: span 2; flex-direction: column; text-align: center; padding: 28px 24px; }
+    .cat-card--featured::after { display: none; }
+  }
+  @media (max-width: 520px) {
+    .cat-card--featured { grid-column: span 1; }
+  }
 
   /* ── GALERÍA ── */
   .galeria { padding: 80px 48px; background: white; }
@@ -471,6 +516,15 @@
       <p>Baby Shower</p>
       <small>Próximamente</small>
     </div>
+
+    <a href="configurador.html" class="cat-card--featured">
+      <span class="cat-feat-icon">🎨</span>
+      <div class="cat-feat-body">
+        <div class="cat-feat-title">Diseña tu decoración</div>
+        <div class="cat-feat-desc">Crea tu decoración paso a paso y cotiza al instante</div>
+      </div>
+      <span class="cat-feat-btn">Abrir configurador →</span>
+    </a>
 
   </div>
 </section>
